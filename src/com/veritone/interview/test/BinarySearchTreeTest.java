@@ -39,7 +39,6 @@ public class BinarySearchTreeTest {
         array.add(7);
         array.add(9);
         TreeNode root = test.arrayToBinarySearchTree(array);
-
         assertEquals(12, root.value);
         assertEquals(11, root.left.value);
         assertEquals(7, root.left.left.value);
@@ -61,7 +60,6 @@ public class BinarySearchTreeTest {
         array.add(12);
         array.add(90);
         TreeNode root = test.arrayToBinarySearchTree(array);
-
         assertEquals(12, root.value);
         assertEquals(11, root.left.value);
         assertEquals(7, root.left.left.value);
@@ -73,6 +71,13 @@ public class BinarySearchTreeTest {
     }
 
     @Test
+    @DisplayName("BSTConstruction.getDeepestNodeDepth empty test")
+    public void testGetDeepestNodeDepthEmpty () {
+        test.arrayToBinarySearchTree(array);
+        assertEquals(0, test.getDeepestNodeDepth());
+    }
+
+    @Test
     @DisplayName("BSTConstruction.getDeepestNodeDepth test")
     public void testGetDeepestNodeDepth () {
         array.add(12);
@@ -81,8 +86,15 @@ public class BinarySearchTreeTest {
         array.add(82);
         array.add(7);
         array.add(9);
-        TreeNode root = test.arrayToBinarySearchTree(array);
+        test.arrayToBinarySearchTree(array);
         assertEquals(4, test.getDeepestNodeDepth());
+    }
+
+    @Test
+    @DisplayName("BSTConstruction.getDeepestNode empty test")
+    public void testGetDeepestNodeEmpty () {
+        test.arrayToBinarySearchTree(array);
+        assertNull(test.getDeepestNode());
     }
 
     @Test
@@ -94,7 +106,7 @@ public class BinarySearchTreeTest {
         array.add(82);
         array.add(7);
         array.add(9);
-        TreeNode root = test.arrayToBinarySearchTree(array);
+        test.arrayToBinarySearchTree(array);
         assertEquals(9, test.getDeepestNode().value);
     }
 
