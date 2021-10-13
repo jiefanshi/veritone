@@ -81,7 +81,7 @@ public class BinarySearchTreeTest {
         array.add(82);
         array.add(7);
         array.add(9);
-        TreeNode root = test.arrayToBinarySearchTree(array);
+        test.arrayToBinarySearchTree(array);
         assertEquals(4, test.getDeepestNodeDepth());
     }
 
@@ -94,7 +94,7 @@ public class BinarySearchTreeTest {
         array.add(82);
         array.add(7);
         array.add(9);
-        TreeNode root = test.arrayToBinarySearchTree(array);
+        test.arrayToBinarySearchTree(array);
         assertEquals(9, test.getDeepestNode().value);
     }
 
