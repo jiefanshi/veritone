@@ -61,8 +61,8 @@ public class BinarySearchTree {
 
     /**
      * Insert a data in the Binary Search Tree
-     * @param root create a TreeNode
-     * @param target target number
+     * @param root insert into a TreeNode
+     * @param target target to be inserted
      */
     public TreeNode insert(TreeNode root, int target) {
         if (root == null) {
@@ -73,8 +73,8 @@ public class BinarySearchTree {
     }
 
     /**
-     * Insert a data in the Binary Search Tree Helper
-     * @param root insert to root
+     * Insert a data in the Binary Search Tree helper function
+     * @param root insert into a TreeNode
      * @param target target to be inserted
      */
     public void insertHelper(TreeNode root, int target, int currentDepth) {
