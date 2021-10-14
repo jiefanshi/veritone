@@ -6,7 +6,6 @@ import java.util.*;
  * Binary Search Tree construction.
  * The Binary Search Tree is built from a list of integers
  * It also needs to return the depth and the deepest nodes of the BST.
- * It only supports Integer initially
  */
 public class BinarySearchTree {
     private int deepestNodesDepth = 0;
