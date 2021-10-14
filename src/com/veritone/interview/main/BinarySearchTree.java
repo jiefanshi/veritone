@@ -64,6 +64,7 @@ public class BinarySearchTree {
             return;
         }
         if (root.value == target) {
+            //update the depth and the deepest node information each time a new node is inserted
             if (currentDepth > deepestNodesDepth) {
                 deepestNodesDepth = currentDepth;
                 deepestNodes = new HashSet<>();
