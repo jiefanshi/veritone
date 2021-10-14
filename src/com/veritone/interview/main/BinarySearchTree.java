@@ -67,8 +67,10 @@ public class BinarySearchTree {
             if (currentDepth > deepestNodesDepth) {
                 deepestNodesDepth = currentDepth;
                 deepestNodes = new HashSet<>();
+                deepestNodes.add(new TreeNode(target));
+            } else if (currentDepth == deepestNodesDepth) {
+                deepestNodes.add(new TreeNode(target));
             }
-            deepestNodes.add(new TreeNode(target));
         } else if (root.value > target) {
             if (root.left == null) {
                 root.left = new TreeNode(target);
