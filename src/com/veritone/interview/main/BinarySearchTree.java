@@ -1,51 +1,29 @@
 package com.veritone.interview.main;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class BinarySearchTree {
-    public static void main(String[] args) {
-        List<Integer> array = new ArrayList<>();
-        array.add(12);
-        array.add(11);
-        array.add(90);
-        array.add(82);
-        array.add(7);
-        array.add(9);
-        BinarySearchTree test1 = new BinarySearchTree();
-        TreeNode root = test1.arrayToBinarySearchTree(array);
-        test1.printTreeNodes(root);
-    }
-
-    public void printTreeNodes(TreeNode root) {
-        if (root ==null) {
-            return;
-        }
-        System.out.println(root.value);
-        printTreeNodes(root.left);
-        printTreeNodes(root.right);
-    }
-
-    private int deepestNodeDepth = 0;
-    private TreeNode deepestNode = null;
+    private int deepestNodesDepth = 0;
+    private Set<TreeNode> deepestNodes = null;
 
     /**
      * Get the deepestNode in Binary Search Tree
      */
-    public TreeNode getDeepestNode() {
-        return deepestNode;
+    public Set<TreeNode> getDeepestNodes() {
+        return deepestNodes;
     }
 
     /**
-     * Get the deepth of the Binary Search Tree
+     * Get the depth of the Binary Search Tree
      */
     public int getDeepestNodeDepth() {
-        return deepestNodeDepth;
+        return deepestNodesDepth;
     }
 
     /**
      * Convert an unsorted array to Binary Search Tree
      * @param array input array
+     * @return return a binary search tree
      */
     public TreeNode arrayToBinarySearchTree (List<Integer> array) {
         if (array.isEmpty()) {
@@ -59,32 +37,38 @@ public class BinarySearchTree {
     }
 
     /**
-     * Insert a data in the Binary Search Tree
+     * Insert a node in the Binary Search Tree
      * @param root insert into a TreeNode
      * @param target target to be inserted
+     * @return return the tree after insert
      */
     public TreeNode insert(TreeNode root, int target) {
         if (root == null) {
-            return new TreeNode(target);
+            deepestNodesDepth = 1;
+            deepestNodes = new HashSet<>();
+            root = new TreeNode(target);
+            deepestNodes.add(root);
+            return root;
         }
         insertHelper(root, target, 1);
         return root;
     }
 
     /**
-     * Insert a data in the Binary Search Tree helper function
+     * Insert a node in the Binary Search Tree helper function
      * @param root insert into a TreeNode
      * @param target target to be inserted
      */
-    public void insertHelper(TreeNode root, int target, int currentDepth) {
+    private void insertHelper(TreeNode root, int target, int currentDepth) {
         if (root == null) {
             return;
         }
         if (root.value == target) {
-            if (currentDepth > deepestNodeDepth) {
-                deepestNodeDepth = currentDepth;
-                deepestNode = root;
+            if (currentDepth > deepestNodesDepth) {
+                deepestNodesDepth = currentDepth;
+                deepestNodes = new HashSet<>();
             }
+            deepestNodes.add(new TreeNode(target));
         } else if (root.value > target) {
             if (root.left == null) {
                 root.left = new TreeNode(target);

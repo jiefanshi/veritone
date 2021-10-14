@@ -94,7 +94,7 @@ public class BinarySearchTreeTest {
     @DisplayName("BSTConstruction.getDeepestNode empty test")
     public void testGetDeepestNodeEmpty () {
         test.arrayToBinarySearchTree(array);
-        assertNull(test.getDeepestNode());
+        assertNull(test.getDeepestNodes());
     }
 
     @Test
@@ -107,7 +107,7 @@ public class BinarySearchTreeTest {
         array.add(7);
         array.add(9);
         test.arrayToBinarySearchTree(array);
-        assertEquals(9, test.getDeepestNode().value);
+        assertEquals(9, test.getDeepestNodes().iterator().next().value);
     }
 
     @AfterAll
