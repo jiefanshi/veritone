@@ -1,6 +1,5 @@
 package com.veritone.interview.test;
 
-
 import com.veritone.interview.main.BinarySearchTree;
 import com.veritone.interview.main.TreeNode;
 import org.junit.jupiter.api.*;
@@ -12,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class BinarySearchTreeTest {
-
     BinarySearchTree test;
     List<Integer> array;
 
@@ -116,6 +114,4 @@ public class BinarySearchTreeTest {
     public static void cleanUp(){
         System.out.println("Tests finish.");
     }
-
-
 }

@@ -2,12 +2,18 @@ package com.veritone.interview.main;
 
 import java.util.*;
 
+/**
+ * Binary Search Tree construction.
+ * The Binary Search Tree is built from a list of integers
+ * It also needs to return the depth and the deepest nodes of the BST.
+ * It only supports Integer initially
+ */
 public class BinarySearchTree {
     private int deepestNodesDepth = 0;
     private Set<TreeNode> deepestNodes = null;
 
     /**
-     * Get the deepestNode in Binary Search Tree
+     * Get the deepest nodes in Binary Search Tree
      */
     public Set<TreeNode> getDeepestNodes() {
         return deepestNodes;
