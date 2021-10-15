@@ -8,7 +8,7 @@ import java.util.*;
  * It also needs to return the depth and the deepest nodes of the BST.
  */
 public class BinarySearchTree {
-    private int deepestNodesDepth = 0;
+    private int deepestNodesDepth = -1;
     private Set<TreeNode> deepestNodes = null;
 
     /**
@@ -49,13 +49,13 @@ public class BinarySearchTree {
      */
     public TreeNode insert(TreeNode root, int target) {
         if (root == null) {
-            deepestNodesDepth = 1;
+            deepestNodesDepth = 0;
             deepestNodes = new HashSet<>();
             root = new TreeNode(target);
             deepestNodes.add(root);
             return root;
         }
-        insertHelper(root, target, 1);
+        insertHelper(root, target, 0);
         return root;
     }
 
